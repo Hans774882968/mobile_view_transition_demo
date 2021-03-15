@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+main{
+    position: relative;/*给子元素div一个参照*/
+    flex: 1;/*瓜分navbar未占领的竖直方向空间*/
+}
+
+main div{
+    position: absolute;/*使div重叠于相同位置*/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    transition: 1s;
+    transform: translateY(-100%);/*下滑效果*/
+}
+
+main div:target{
+    transition: 1s;
+    transform: translateY(0);/*下滑效果*/
+}
+
+main #home:target{
+    background-color: #27ae60;
+}
+
+main #video:target{
+    background-color: #e67e22;
+}
+
+main #live:target{
+    background-color: #2980b9;
+}
+
+i[class^="fa"]{
+    font-size: 8em;
+    color: white;
+}
+
+.navbar{
+    height: 8vh;
+    background-color: #34495e;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+    flex: 1;/*3个a标签均分空间*/
+    text-transform: uppercase;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.navbar a:nth-child(2){
+    border-left: 2px solid silver;
+    border-right: 2px solid silver;
+}
